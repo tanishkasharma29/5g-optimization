@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5G Optimization Prediction</title>
+</head>
+<body>
+    <h2>📡 Enter Case Details</h2>
+    
+    <!-- Form to collect input data -->
+    <form action="/predict" method="post">
+        <label>Description:</label><br>
+        <textarea name="description" rows="4" cols="50" required></textarea><br><br>
+
+        <label>Resource Allocation Strategy:</label><br>
+        <input type="text" name="resource" required><br><br>
+
+        <label>Throughput Maximization Outcome:</label><br>
+        <input type="text" name="throughput" required><br><br>
+
+        <label>Load Balancing Outcome:</label><br>
+        <input type="text" name="load" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    <br>
+    
+    <!-- Display prediction result -->
+    {% if prediction_text %}
+        <h3 style="color: green;">{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
